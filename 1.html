@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .a{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: pink;
+            left: 0;
+            top: 0;
+        }
+        .aa{
+            top: 201px;
+            left: 200px;
+        }
+        .aaa{
+            top: 402px;
+            left: 1000px
+        }
+        .aaaa{
+            top: 603px;
+            left: 500px;
+        }
+        img{
+            width: 200px;
+        }
+        p{
+            font-size: 20px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <img src="1.jpg" alt="">
+        <p>国庆节快乐呀!</p>
+    </div>
+    <div class="a aa">
+        <img src="1.jpg" alt="">
+        <p>国庆节快乐呀!</p>
+    </div>
+    <div class="a aaa">
+        <img src="1.jpg" alt="">
+        <p>国庆节快乐呀!</p>
+    </div>
+    <div class="a aaaa">
+        <img src="1.jpg" alt="">
+        <p>国庆节快乐呀!</p>
+    </div>
+    <script>
+        window.onload=function(){
+            var aNode=document.querySelector('.a');
+            var aaNode=document.querySelector('.aa');
+            var aaaNode=document.querySelector('.aaa');
+            var aaaaNode=document.querySelector('.aaaa');
+            var itemTime=1;
+            var item=1;
+            var Time=1;
+            var aaaa=1;
+            var X=document.documentElement.clientWidth;
+            setInterval(function(){
+                var K=aNode.offsetLeft;
+                var A=K+itemTime;
+                if(A>X-aNode.offsetWidth){
+                    itemTime=-itemTime;
+                    A=X-aNode.offsetWidth;
+                }else if(A<0){
+                    itemTime=-itemTime;
+                    A=0;
+                }
+                aNode.style.left=A+'px';
+            },5)
+            setInterval(function(){
+                var B=aaNode.offsetLeft;
+                var A=B+item;
+                if(A>X-aaNode.offsetWidth){
+                    item=-item;
+                    A=X-aaNode.offsetWidth;
+                }else if(A<0){
+                    item=-item;
+                    A=0;
+                }
+                aaNode.style.left=A+'px';
+            },3)
+            setInterval(function(){
+                var B=aaaNode.offsetLeft;
+                var A=B+Time;
+                if(A>X-aaaNode.offsetWidth){
+                    Time=-Time;
+                    A=X-aaaNode.offsetWidth;
+                }else if(A<0){
+                    Time=-Time;
+                    A=0;
+                }
+                aaaNode.style.left=A+'px';
+            },4)
+            setInterval(function(){
+                var B=aaaaNode.offsetLeft;
+                var A=B+aaaa;
+                if(A>X-aaaaNode.offsetWidth){
+                    aaaa=-aaaa;
+                    A=X-aaaaNode.offsetWidth;
+                }else if(A<0){
+                    aaaa=-aaaa;
+                    A=0;
+                }
+                aaaaNode.style.left=A+'px';
+            },6)
+        }
+    </script>
+</body>
+</html>
